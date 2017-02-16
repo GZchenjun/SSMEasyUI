@@ -35,4 +35,10 @@
     <insert id="add" parameterType="product">
         insert into t_product (name,price,des) value (#{name},#{price},#{des})
     </insert>
+    <delete id="deleteById" parameterType="int">
+        delete from  t_product where id = #{id}
+    </delete>
+    <update id="update" parameterType="product">
+        update t_product set name=#{name},price=#{price},des=#{des} where id=#{id}
+    </update>
 </mapper>

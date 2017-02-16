@@ -42,8 +42,21 @@ public class ProductController {
     }
     @ResponseBody
     @RequestMapping("add")
-    public ControllerResult result(Product product){
+    public ControllerResult AddProdcut(Product product){
         productService.add(product);
         return ControllerResult.getSuccessResult("添加商品成功");
+    }
+
+    @ResponseBody
+    @RequestMapping("update")
+    public ControllerResult UpdateProdcut(Product product){
+        productService.update(product);
+        return ControllerResult.getSuccessResult("更新商品成功");
+    }
+    @ResponseBody
+    @RequestMapping("deleteProduct")
+    public ControllerResult DeleteUpdate(Product product,int id){
+        productService.deleteById(id);
+        return ControllerResult.getSuccessResult("删除产品成功");
     }
 }

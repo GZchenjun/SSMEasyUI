@@ -59,7 +59,7 @@
 	
 	function editProduct() {
 		if ($("#editForm").form("validate")) {
-			$.post("<%=path %>/product/edit",
+			$.post("<%=path %>/product/update",
 					$("#editForm").serialize(),
 					function (data) {
 						if (data.result == "success") {
@@ -81,7 +81,7 @@
 		if (row) {
 			$.messager.confirm("提示", "确定删除吗？", function (r) {
 				if (r) { // 点击了确定按键
-					$.get("<%=path %>/product/del?id=" + row.id, function (data) {
+					$.get("<%=path %>/product/deleteProduct?id=" + row.id, function (data) {
 						$("#list").datagrid("reload");
 					}, "json");
 				}
@@ -157,31 +157,11 @@
 			<table>
 				<tr>
 					<td>商品名称</td>
-					<td><input class="easyui-validatebox easyui-textbox" name="title" data-options="required:true,validType:'length[2,20]'"/></td>
+					<td><input class="easyui-validatebox easyui-textbox" name="name" data-options="required:true,validType:'length[2,20]'"/></td>
 				</tr>
 				<tr>
 					<td>商品价格</td>
 					<td><input class="easyui-validatebox easyui-numberbox" name="price" data-options="required:true,precision:2"/></td>
-				</tr>
-				<tr>
-					<td>商品类型</td>
-					<td>
-					 <input class="easyui-combobox" name="type" data-options="required:true,
-						url:'<%=path %>/pt/all',
-						method:'get',
-						valueField:'id',
-						textField:'text',
-						panelHeight:'auto'
-					"/>
-					</td>
-				</tr>
-				<tr>
-					<td>生产日期</td>
-					<td><input class="easyui-datebox" name="pDateStr"></td>
-				</tr>
-				<tr>
-					<td>入库时间</td>
-					<td><input class="easyui-datetimebox" name="enterDateStr"></td>
 				</tr>
 				<tr>
 					<td>商品描述</td>

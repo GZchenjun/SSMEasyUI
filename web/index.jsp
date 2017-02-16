@@ -11,6 +11,6 @@
     <title>SSMEasyUI</title>
   </head>
   <body>
-  $END$
+  Hello,SSMEasyUI!
   </body>
 </html>

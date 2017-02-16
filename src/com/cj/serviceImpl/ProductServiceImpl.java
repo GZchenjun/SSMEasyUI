@@ -35,12 +35,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void update(Product product) {
-
+        productDAO.update(product);
     }
 
     @Override
     public void deleteById(Serializable id) {
-
+        productDAO.deleteById(id);
     }
 
     @Override
