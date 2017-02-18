@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="SSMEasyUI" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="aspectj-weaver" />
+          <element id="library" level="project" name="struts2-core-2.3.31" />
+          <element id="library" level="application_server_libraries" name="Tomcat 8.0.36" />
+        </element>
       </element>
     </root>
   </artifact>

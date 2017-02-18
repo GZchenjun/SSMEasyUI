@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/SSMEasyUI"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="Tomcat 8.0.36" scope="PROVIDED"/>
+	<levels>
+		<level name="Tomcat 8.0.36" value="application_server_libraries"/>
+		<level name="aspectj-weaver" value="project"/>
+		<level name="struts2-core-2.3.31" value="project"/>
+	</levels>
+</component>

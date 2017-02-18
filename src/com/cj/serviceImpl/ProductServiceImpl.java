@@ -45,9 +45,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Pager4EasyUI<Product> queryByPagerAndCriteria(Pager4EasyUI<Product> pager, Product product) {
-        List<Product> pagers = productDAO.queryByPagerAndCriteria(pager,product);
+        List<Product> products = productDAO.queryByPagerAndCriteria(pager,product);
+        pager.setRows(products);
         pager.setTotal(productDAO.countByCriteria(product));
-        pager.setRows(pagers);
         return pager;
     }
 

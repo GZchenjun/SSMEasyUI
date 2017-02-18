@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+        catalina.home(安装目录)：指向公用信息的位置，就是bin和lib的父目录。
+        catalina.base(工作目录)：指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。
+    -->
+    <substitutionProperty name="logbase" value="${catalina.home}/logs/"/>
+    <jmxConfigurator/>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date [%thread] %-5level %logger{80} - %msg%n</pattern>
+        </layout>
+    </appender>
+    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Encoding>UTF-8</Encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <File>${logbase}%d{yyyy-MM-dd}.log</File>
+            <FileNamePattern>${logbase}.%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>2MB</MaxFileSize>
+        </triggeringPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date%level%thread%10logger%file%line%msg%n</pattern>
+        </layout>
+    </appender>
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logfile"/>
+    </root>
+</configuration>

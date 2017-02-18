@@ -1,16 +1,18 @@
 package com.cj.controller;
 
+import ch.qos.logback.classic.Logger;
 import com.cj.bean.Product;
 import com.cj.common.bean.ControllerResult;
 import com.cj.common.bean.Pager4EasyUI;
-import com.cj.common.bean.WebUtil;
 import com.cj.service.ProductService;
+import org.apache.ibatis.annotations.Param;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,7 +23,7 @@ import java.util.List;
 public class ProductController {
     @Resource
     private ProductService productService;
-
+    private Logger logger =(Logger) LoggerFactory.getLogger(ProductController.class);
     @RequestMapping("show")
     public String showPager(){
         return "layout_full_screen";
@@ -31,32 +33,37 @@ public class ProductController {
         return "products";
     }
     @ResponseBody
-    @RequestMapping("pager")
-    public List<Product> PagerProduct(HttpServletRequest req){
-        Pager4EasyUI<Product> pager4EasyUI = new Pager4EasyUI<Product>();
-        pager4EasyUI.setPageSize(WebUtil.getPageSize(req));
-        pager4EasyUI.setPageNo(WebUtil.getPageNo(req));
-        Product p = new Product();
-        productService.queryByPagerAndCriteria(pager4EasyUI,p);
-        return pager4EasyUI.getRows();
+    @RequestMapping(value="pager",method= RequestMethod.GET)
+    public Pager4EasyUI queryPager(@Param("page")String page, @Param("rows")String rows){
+        logger.info("分页查询所有产品");
+        Pager4EasyUI<Product> pager = new Pager4EasyUI<Product>();
+        pager.setPageNo(Integer.valueOf(page));
+        pager.setPageSize(Integer.valueOf(rows));
+        Product product = new Product();
+        //product.setName("2");
+        pager = productService.queryByPagerAndCriteria(pager,product);
+        return pager;
     }
     @ResponseBody
-    @RequestMapping("add")
-    public ControllerResult AddProdcut(Product product){
+    @RequestMapping(value="add",method=RequestMethod.POST)
+    public ControllerResult AddProduct(Product product){
         productService.add(product);
+        logger.info("添加商品");
         return ControllerResult.getSuccessResult("添加商品成功");
     }
 
     @ResponseBody
-    @RequestMapping("update")
-    public ControllerResult UpdateProdcut(Product product){
+    @RequestMapping(value="update",method=RequestMethod.POST)
+    public ControllerResult UpdateProduct(Product product){
         productService.update(product);
+        logger.info("更新商品");
         return ControllerResult.getSuccessResult("更新商品成功");
     }
     @ResponseBody
-    @RequestMapping("deleteProduct")
+    @RequestMapping(value="deleteProduct",method=RequestMethod.GET)
     public ControllerResult DeleteUpdate(Product product,int id){
         productService.deleteById(id);
+        logger.info("删除商品");
         return ControllerResult.getSuccessResult("删除产品成功");
     }
 }

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/logback-ext-spring-0.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/logback-core-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/logback-classic-1.2.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+  </library>
+</component>

@@ -7,8 +7,8 @@ public class Pager4EasyUI<T> {
 	private int pageSize;
 	private int pageNo;
 	
-	private int total; // ���ص�easyui����ҳ��
-	private List<T> rows; // ���ص�easyui�Ľ��
+	private int total;
+	private List<T> rows;
 	
 	public int getBeginIndex() {
 		return (pageNo - 1) * pageSize;
