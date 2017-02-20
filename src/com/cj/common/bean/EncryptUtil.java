@@ -13,8 +13,14 @@ public class EncryptUtil {
     public static final String CHARSET = "utf-8";
 
     public static final String MD5 = "md5";
-    public static final String SHA = "sha";
+    public static final String SHA = "SHA";
+    public static final String SHA_256 = "SHA-256";
 
+    /**
+     *
+     * @param str
+     * @return MD5加密
+     */
     public static String md5Encrypt(String str) {
         String encryptStr = null;
         try {
@@ -27,10 +33,32 @@ public class EncryptUtil {
         return encryptStr;
     }
 
+    /**
+     *
+     * @param str
+     * @return SHA加密
+     */
     public static String shaEncrypt(String str) {
         String encryptStr = null;
         try {
             encryptStr = oneWayEncrypt(str, SHA);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return encryptStr;
+    }
+
+    /**
+     *
+     * @param str
+     * @return SHA-256加密
+     */
+    public static String sha256Encrypt(String str) {
+        String encryptStr = null;
+        try {
+            encryptStr = oneWayEncrypt(str, SHA_256);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
