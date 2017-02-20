@@ -55,4 +55,9 @@ public class ProductServiceImpl implements ProductService {
     public int countByCriteria(Product product) {
         return productDAO.countByCriteria(product);
     }
+
+    @Override
+    public Product queryByLogin(Product product) {
+        return null;
+    }
 }

@@ -22,4 +22,6 @@ public interface BaseDAO<T> {
     public List<T> queryByPagerAndCriteria(Pager4EasyUI<T> pager, T t);
 
     public int countByCriteria(T t);
+
+    public T queryByLogin(T t);
 }

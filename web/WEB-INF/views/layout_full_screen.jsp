@@ -8,7 +8,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-
 <link rel="stylesheet" href="<%=path %>/jquery-easyui/themes/default/easyui.css" />
 <link rel="stylesheet" href="<%=path %>/jquery-easyui/themes/icon.css" />
 <link rel="stylesheet" href="<%=path %>/css/main.css" />
@@ -16,13 +15,17 @@
 <script type="text/javascript" src="<%=path %>/jquery-easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="<%=path %>/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="<%=path %>/js/main.js"></script>
-
+<script>
+	function exit(){
+        window.location.href = "<%=path %>/user/exit"
+	}
+</script>
 </head>
 <body class="easyui-layout">
 		<div data-options="region:'north'" style="height:60px">
 			<img src="<%=path%>/images/2131.png" class="logo" />
 			<div id="wel">
-				欢迎您：XXXX，安全退出
+				欢迎您：${requestScope.user.email}，<a href="javascript:;" onclick="exit();">退出登入</a>
 			</div>
 		</div>
 		<div data-options="region:'west',split:true" title="菜单" style="width:240px;">
