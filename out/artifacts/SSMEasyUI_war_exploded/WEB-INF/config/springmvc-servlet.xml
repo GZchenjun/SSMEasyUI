@@ -23,7 +23,7 @@
     </bean>
 
 <!-- 文件上传，默认编码，上传的大小单位为字节 -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <bean id="multipartResolver" class="com.cj.common.web.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8" />
         <property name="maxUploadSize" value="209715200" />
         <property name="maxInMemorySize" value="40960" />
@@ -34,7 +34,8 @@
     <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:resources location="jquery-easyui/" mapping="/jquery-easyui/**"/>
-    <mvc:resources location="/uploads/" mapping="/uploads/**" />
+    <mvc:resources location="/ueditor/" mapping="/ueditor/**"/>
+    <mvc:resources location="/upload/" mapping="/upload/**" />
 
 <!-- Spring MVC返回JSON数据的配置，使用哪个类来生成JSON -->
     <bean id="mappingJacksonHttpMessageConverter"

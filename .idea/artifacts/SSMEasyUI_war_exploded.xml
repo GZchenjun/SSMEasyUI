@@ -11,6 +11,9 @@
           <element id="library" level="project" name="aspectj-weaver" />
           <element id="library" level="project" name="struts2-core-2.3.31" />
           <element id="library" level="application_server_libraries" name="Tomcat 8.0.36" />
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="module" name="JUnit4" module-name="SSMEasyUI" />
+          <element id="library" level="project" name="commons-codec-1.9" />
         </element>
       </element>
     </root>

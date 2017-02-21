@@ -26,7 +26,9 @@ public class EncryptTest {
     public void testSHA_256Encrypt(){
         String text = "123";
         String sha256Encrypt = EncryptUtil.sha256Encrypt(text);
-        System.out.print(sha256Encrypt);
+        System.out.println("SHA-256加密：" + sha256Encrypt);
+        String sha256Md5Encrypt = EncryptUtil.md5Encrypt(sha256Encrypt);
+        System.out.println("SHA-256&&MD5加密" + sha256Md5Encrypt);
     }
 
 }
