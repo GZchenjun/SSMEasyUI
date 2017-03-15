@@ -5,10 +5,11 @@
 <mapper namespace="com.cj.dao.UserDAO">
     <resultMap id="userMap" type="user">
         <id property="id" column="id"></id>
+        <result column="name" property="name"></result>
         <result column="email" property="email"></result>
         <result column="pwd" property="pwd"></result>
     </resultMap>
-    <select id="queryByLogin" parameterType="user" resultType="user">
-        select * from t_users where email = #{email} and pwd = #{pwd}
-    </select>
+    <!--<select id="queryByLogin" parameterType="user" resultType="user">-->
+        <!--select * from t_users where email = #{email} and pwd = #{pwd}-->
+    <!--</select>-->
 </mapper>

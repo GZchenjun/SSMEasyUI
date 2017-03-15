@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="SSMEasyUI:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/SSMEasyUI_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="SSMEasyUI/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SSMEasyUI" />
@@ -10,12 +9,13 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="aspectj-weaver" />
           <element id="library" level="project" name="struts2-core-2.3.31" />
-          <element id="library" level="application_server_libraries" name="Tomcat 8.0.36" />
           <element id="library" level="project" name="lib" />
           <element id="library" level="module" name="JUnit4" module-name="SSMEasyUI" />
-          <element id="library" level="project" name="commons-codec-1.9" />
+          <element id="library" level="application_server_libraries" name="Tomcat 8.0.36" />
         </element>
       </element>
+      <element id="library" level="project" name="commons-codec-1.9" />
+      <element id="javaee-facet-resources" facet="SSMEasyUI/web/Web" />
     </root>
   </artifact>
 </component>

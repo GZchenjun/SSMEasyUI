@@ -10,5 +10,5 @@
 	String rootPath = application.getRealPath( "/" );
 	
 	out.write( new ActionEnter( request, rootPath ).exec() );
-	
+	//去读取config.json配置文件
 %>

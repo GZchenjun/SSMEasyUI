@@ -3,6 +3,7 @@
     <%
     	String path = request.getContextPath();
     %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE>
 <html>
 <head>
@@ -20,22 +21,27 @@
         window.location.href = "<%=path %>/user/exit"
 	}
 </script>
+	<style>
+		a{
+			text-decoration:none;
+		}
+	</style>
 </head>
 <body class="easyui-layout">
 		<div data-options="region:'north'" style="height:60px">
 			<img src="<%=path%>/images/2131.png" class="logo" />
 			<div id="wel">
-				欢迎您：${requestScope.user.email}，<a href="javascript:;" onclick="exit();">退出登入</a>
+				欢迎您：<shiro:principal/>,<a href="javascript:;" onclick="exit();">退出登入</a>
 			</div>
 		</div>
 		<div data-options="region:'west',split:true" title="菜单" style="width:240px;">
 			<div class="easyui-accordion menu" style="width:240px;">
-				<div title="商品管理">
+				<div title="供货卡盟管理">
 					<ul>
-						<li><a href="javascript:;" onclick="addTab('所有商品','<%=path %>/product/showProduct');">所有商品</a></li>
-						<li><a href="javascript:;" onclick="addTab('系统设置','http://www.sina.com.cn');">系统设置</a></li>
-						<li>系统公告</li>
-						<li>系统监测</li>
+						<li><a href="javascript:;" onclick="addTab('所有订单','<%=path %>/product/showProduct');">所有订单</a></li>
+						<li><a href="javascript:;" onclick="addTab('起点卡盟','http://qdian.99ka.cn');">起点卡盟</a></li>
+						<%--<li><a href="javascript:;" onclick="addTab('俊轩卡盟','http://www.jxwlcw.com');">俊轩卡盟</a></li>--%>
+						<li><a href="javascript:;" onclick="addTab('哎哟卡盟','http://www.aiyowokao.com');">哎哟卡盟</a></li>
 					</ul>
 				</div>
 				<div title="用户管理">
@@ -45,7 +51,7 @@
 						<li>系统公告</li>
 						<li>系统监测</li>
 					</ul>
-				</div>
+			</div>
 				<div title="消息管理">
 					<ul>
 						<li><a href="#">修改密码</a></li>
@@ -80,10 +86,21 @@
 		<div data-options="region:'center'">
 			<div id="tabs" class="easyui-tabs" style="width:100%;height:100%;">
 				<div title="主页" style="padding:10px">
-					主页内容
+					<img src="<%=path%>/images/2131.png" style="width:100%;height:475px;">
 				</div>
 			</div>
 		</div>
 		<div data-options="region:'south',split:false" style="height:50px;">Copyright&copy;test 2016-2020</div>
+
+		<!-- 菜单窗口 -->
+		<div id="mm" class="easyui-menu cs-tab-menu">
+			<div id="mm-tabupdate">刷新</div>
+			<div class="menu-sep"></div>
+			<div id="mm-tabclose">关闭</div>
+			<div id="mm-tabcloseleft">关闭左边选项卡</div>
+			<div id="mm-tabcloseright">关闭右边选项卡</div>
+			<div id="mm-tabcloseother">关闭其他</div>
+			<div id="mm-tabcloseall">关闭全部</div>
+		</div>
 </body>
 </html>

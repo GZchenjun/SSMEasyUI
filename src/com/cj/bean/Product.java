@@ -5,8 +5,38 @@ package com.cj.bean;
  */
 public class Product {
     private int id;
-    private String name;
+    private String name_id;
     private double price;
+    private String qq;
+    private String pwd;
+    private String number_id;//订单号
+    private String phone;//手机号码
+
+
+    public String getNumber_id() {
+        return number_id;
+    }
+
+    public void setNumber_id(String number_id) {
+        this.number_id = number_id;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     private String des;
 
     public int getId() {
@@ -17,12 +47,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getName_id() {
+        return name_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_id(String name_id) {
+        this.name_id = name_id;
     }
 
     public double getPrice() {
@@ -33,21 +63,19 @@ public class Product {
         this.price = price;
     }
 
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
+
     public String getDes() {
         return des;
     }
 
     public void setDes(String des) {
         this.des = des;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", des='" + des + '\'' +
-                '}';
     }
 }

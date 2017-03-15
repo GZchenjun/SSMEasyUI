@@ -5,16 +5,20 @@
 <mapper namespace="com.cj.dao.ProductDAO">
     <resultMap type="product" id="productMap">
         <id property="id" column="id"></id>
-        <result property="name" column="name"></result>
+        <result property="name_id" column="name_id"></result>
         <result property="price" column="price"></result>
+        <result property="qq" column="qq"></result>
         <result property="des" column="des"></result>
+        <result property="phone" column="phone"></result>
+        <result property="pwd" column="pwd"></result>
+        <result property="number_id" column="number_id"></result>
     </resultMap>
     <select id="queryAll" resultMap="productMap">
         select * from t_product
     </select>
     <select id="queryByPagerAndCriteria" resultMap="productMap">
         select * from t_product where 1 = 1
-        <if test="product.name != null and product.name != ''">
+        <if test="product.name_id != null and product.name_id != ''">
             and name like concat('%', #{product.name}, '%')
         </if>
         <if test="product.price != null and product.price != ''">
@@ -25,20 +29,20 @@
 
     <select id="countByCriteria" resultType="int" parameterType="product">
         select count(id) from t_product where 1 = 1
-        <if test="name != null and name != ''">
-            and name like concat('%', #{name}, '%')
+        <if test="name_id != null and name_id != ''">
+            and name like concat('%', #{name_id}, '%')
         </if>
         <if test="price != null and price != ''">
             and price = #{price}
         </if>
     </select>
     <insert id="add" parameterType="product">
-        insert into t_product (name,price,des) value (#{name},#{price},#{des})
+        insert into t_product (name_id,price,qq,des,number_id,phone,pwd) value (#{name_id},#{price},#{qq},#{des},#{phone},#{number_id},#{pwd})
     </insert>
     <delete id="deleteById" parameterType="int">
         delete from  t_product where id = #{id}
     </delete>
     <update id="update" parameterType="product">
-        update t_product set name=#{name},price=#{price},des=#{des} where id=#{id}
+        update t_product set name_id = #{name_id}, price = #{price}, des = #{des}, qq = #{qq} ,number_id =#{number_id}, pwd = #{pwd},phone = #{phone} where id = #{id}
     </update>
 </mapper>
