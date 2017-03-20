@@ -5,15 +5,11 @@
 <html>	
 <head>
 <title>Login</title>
-<%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<%--<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />--%>
+<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
 <link href="<%=path%>/css/style.css" rel='stylesheet' type='text/css' />
-<!--webfonts-->
-<%--<link href='http://fonts.useso.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>--%>
-<%--<link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet' type='text/css'>--%>
-<%--<!--//webfonts-->--%>
-<%--<script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>--%>
+<script src="<%=path%>/js/jquery.min.js"></script>
 </head>
 <body>
 <script>$(document).ready(function(c) {
@@ -25,9 +21,9 @@
 });
 </script>
  <!--SIGN UP-->
- <h1>俊轩供货订单记录系统</h1>
+ <h1>供货订单管理系统</h1>
 <div class="login-form">
-	<%--<div class="close"> </div>--%>
+	<div class="close"> </div>
 		<div class="head-info">
 			<label class="lbl-1"> </label>
 			<label class="lbl-2"> </label>
@@ -38,9 +34,9 @@
 		<img src="<%=path%>/images/avtar.png" />
 	</div>
 			<form action="<%=path%>/user/login" method="post">
-					<input type="text" class="email" value="Username"  name="email"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+					<input type="text" class="email" value="邮箱"  name="email"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}" >
 						<div class="key">
-					<input type="password" value="Password" name="pwd" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" >
+					<input type="password" value="密码" name="pwd" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}" >
 						</div>
 
 	<div class="signin">

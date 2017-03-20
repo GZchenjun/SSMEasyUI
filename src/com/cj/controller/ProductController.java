@@ -28,10 +28,12 @@ public class ProductController {
     public String showPager(){
         return "layout_full_screen";
     }
+
     @RequestMapping("showProduct")
     public String ProductPager(){
         return "products";
     }
+
     @ResponseBody
     @RequestMapping(value="pager",method= RequestMethod.GET)
     public Pager4EasyUI queryPager(@Param("page")String page, @Param("rows")String rows){
@@ -44,6 +46,7 @@ public class ProductController {
         pager = productService.queryByPagerAndCriteria(pager,product);
         return pager;
     }
+
     @ResponseBody
     @RequestMapping(value="add",method=RequestMethod.POST)
     public ControllerResult AddProduct(Product product){
@@ -59,6 +62,7 @@ public class ProductController {
         logger.info("更新商品");
         return ControllerResult.getSuccessResult("更新商品成功");
     }
+
     @ResponseBody
     @RequestMapping(value="deleteProduct",method=RequestMethod.GET)
     public ControllerResult DeleteUpdate(Product product,int id){

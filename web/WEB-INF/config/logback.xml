@@ -4,7 +4,7 @@
         catalina.home(安装目录)：指向公用信息的位置，就是bin和lib的父目录。
         catalina.base(工作目录)：指向每个Tomcat目录私有信息的位置，就是conf、logs、temp、webapps和work的父目录。
     -->
-    <substitutionProperty name="logbase" value="d:/logs/"/>
+    <substitutionProperty name="logbase" value="e:/logs/"/>
     <jmxConfigurator/>
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">

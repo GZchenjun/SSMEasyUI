@@ -1,6 +1,7 @@
 package com.cj.test;
 
 import com.cj.common.bean.EncryptUtil;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.junit.Test;
 
 /**
@@ -31,4 +32,9 @@ public class EncryptTest {
         System.out.println("SHA-256&&MD5加密" + sha256Md5Encrypt);
     }
 
+    @Test
+    public void testMD5(){
+        String text = "123";
+        System.out.println(new Md5Hash(text).toBase64());
+    }
 }

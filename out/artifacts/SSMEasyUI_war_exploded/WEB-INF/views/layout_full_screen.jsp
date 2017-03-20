@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>CJSmart</title>
 <link rel="stylesheet" href="<%=path %>/jquery-easyui/themes/default/easyui.css" />
 <link rel="stylesheet" href="<%=path %>/jquery-easyui/themes/icon.css" />
 <link rel="stylesheet" href="<%=path %>/css/main.css" />
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		</div>
-		<div data-options="region:'south',split:false" style="height:50px;">Copyright&copy;test 2016-2020</div>
+		<div data-options="region:'south',split:false" style="text-align:center;">Copyright&copy;junxuan 2017-2020</div>
 
 		<!-- 菜单窗口 -->
 		<div id="mm" class="easyui-menu cs-tab-menu">
